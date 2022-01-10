@@ -3,10 +3,13 @@ import { FlatList, FlatListProps } from "react-native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { Feather } from '@expo/vector-icons';
 import { getBottomSpace, getStatusBarHeight } from "react-native-iphone-x-helper";
+import { BorderlessButton } from "react-native-gesture-handler"; 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 
 import { DataListProps } from '.';
  
-export const Container = styled.View`
+export const Container = styled(GestureHandlerRootView)`
     flex: 1;
     background-color: ${({theme}) => theme.colors.background};
 `;
@@ -60,6 +63,10 @@ export const UserWrapper = styled.View`
     align-items: center;
 `;
 
+export const LogoutButton = styled(BorderlessButton)`
+
+`;
+
 export const Icon = styled(Feather)`
     color: ${({theme})=> theme.colors.secondary};
     font-size: ${RFValue(24)}px;
@@ -97,3 +104,4 @@ export const TransactionList = styled(
         paddingBottom: getBottomSpace()
     }
 })``;
+

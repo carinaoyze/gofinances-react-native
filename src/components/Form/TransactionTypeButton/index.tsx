@@ -1,8 +1,8 @@
 import React from 'react';
-import { TouchableOpacityProps } from 'react-native';
-import {Container, Icon, Title} from './styles';
+import { RectButtonProps } from 'react-native-gesture-handler';
+import {Container, Icon, Title, Button} from './styles';
 
-interface Props extends TouchableOpacityProps {
+interface Props extends RectButtonProps {
     title: string;
     type: 'up' | 'down';
     isActive: boolean;
@@ -15,12 +15,14 @@ const icons = {
 
 export function TransactionTypeButton({type, title, isActive, ...rest} : Props) {
     return (
-        <Container type= {type} isActive = {isActive} {...rest} >
-            <Icon 
-                name={icons[type]}
-                type= {type}
-            />
-            <Title>{title}</Title>
+        <Container  type= {type} isActive = {isActive}>
+            <Button {...rest}>
+                <Icon 
+                    name={icons[type]}
+                    type= {type}
+                />
+                <Title>{title}</Title>
+            </Button>
         </Container>
     )
 }

@@ -1,7 +1,9 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-export const Container = styled.View`
+
+export const Container = styled(GestureHandlerRootView)`
     background-color: ${({theme}) => theme.colors.background};
     flex: 1;
 `;
